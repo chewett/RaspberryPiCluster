@@ -17,7 +17,16 @@ logger.addHandler(consoleHandler)
 
 logger.info("Starting script...")
 
-while True:
-    logger.info("logger liveness still alive")
-    time.sleep(1)
+def find_work_to_do():
+    logger.info("Node slave still alive")
+    logger.info("Looking for work to run")
+    return None
 
+
+while True:
+    work = find_work_to_do()
+    if work is None:
+        logger.info("Found no jobs to perform, going to sleep again")
+        time.sleep(10)
+    else:
+        pass # we will do work in the future but not at the momentS
