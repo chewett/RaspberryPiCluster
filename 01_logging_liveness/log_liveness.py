@@ -34,4 +34,4 @@ while True:
         logger.info("Found no jobs to perform, going to sleep again")
         time.sleep(10)
     else:
-        pass # we will do work in the future but not at the momentS
+        pass # we will do work in the future but not at the moment
