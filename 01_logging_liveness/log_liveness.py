@@ -17,6 +17,7 @@ logger.addHandler(consoleHandler)
 
 logger.info("Starting script...")
 
+
 def find_work_to_do():
     logger.info("Node slave still alive")
     logger.info("Looking for work to run")
