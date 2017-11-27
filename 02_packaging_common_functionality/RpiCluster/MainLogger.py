@@ -14,12 +14,9 @@ consoleHandler.setFormatter(logFormatter)
 consoleHandler.setLevel(logging.INFO)
 logger.addHandler(consoleHandler)
 
+
 def add_file_logger(filename):
     # Create a handler to store the logs to a file
     fileHandler = logging.FileHandler(filename)
     fileHandler.setFormatter(logFormatter)
     logger.addHandler(fileHandler)
-
-
-
-logger.info("Starting script...")

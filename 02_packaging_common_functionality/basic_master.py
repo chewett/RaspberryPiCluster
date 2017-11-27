@@ -2,8 +2,8 @@ import time
 from RpiCluster.MainLogger import add_file_logger, logger
 
 add_file_logger("master.log")
-
 logger.info("Starting script...")
+
 
 def find_work_to_do():
     logger.info("Node slave still alive")
