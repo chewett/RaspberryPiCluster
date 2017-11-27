@@ -10,4 +10,10 @@ This git project focuses on creating a distributed Raspberry Pi Cluster.
 file to start logging data. This will set up a python logger and log
 data to it every minute.
 2. Packaging common functionality - 
-3. Daemon Process -
+
+x. Config loading - Config parser
+x. Socket talking - Slave to master
+x. Socket talking - Master Broadcast
+x. Socket talking - Master informs slaves of data
+x. Config loading - JSON
+x. Daemon Process -
