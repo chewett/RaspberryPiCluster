@@ -11,9 +11,12 @@ file to start logging data. This will set up a python logger and log
 data to it every minute.
 2. Packaging common functionality - 
 
-x. Config loading - Config parser
-x. Socket talking - Slave to master
-x. Socket talking - Master Broadcast
-x. Socket talking - Master informs slaves of data
-x. Config loading - JSON
-x. Daemon Process -
+
+## ToDo - List of things that will come in the future
+
+* Config loading - Config parser
+* Socket talking - Slave to master
+* Socket talking - Master Broadcast
+* Socket talking - Master informs slaves of data
+* Config loading - JSON
+* Daemon Process -
