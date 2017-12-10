@@ -1,20 +1,21 @@
 import time
+import socket
+import threading
 from RpiCluster.MainLogger import add_file_logger, logger
 
 add_file_logger("master.log")
 logger.info("Starting script...")
 
+socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+socket.bind(('', 31415))
+socket.listen(1)
 
-def find_work_to_do():
-    logger.info("Node slave still alive")
-    logger.info("Looking for work to run")
-    return None
+(clientsocket, address) = socket.accept()
+logger.info("Got client at {address}".format(address=address))
 
-
-while True:
-    work = find_work_to_do()
-    if work is None:
-        logger.info("Found no jobs to perform, going to sleep again")
-        time.sleep(10)
-    else:
-        pass # we will do work in the future but not at the moment
+data_len = 1
+while data_len > 0:
+    data = clientsocket.recv(512)
+    data_len = len(data)
+    if data_len > 0:
+        print data
