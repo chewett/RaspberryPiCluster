@@ -1,6 +1,4 @@
-import time
 import socket
-import threading
 from RpiCluster.MainLogger import add_file_logger, logger
 
 add_file_logger("master.log")
