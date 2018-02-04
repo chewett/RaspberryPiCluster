@@ -23,7 +23,10 @@ I move some of the common functionality into a package so more easily use across
 
 3. Basic node communication between two nodes [Full tutorial](https://chewett.co.uk/blog/901/raspberry-pi-cluster-node-03-basic-node-communication-two-nodes/) -
  Here I introduce sockets as a simple way of sending data between two concurrently running scripts.
- 
+
+4. Configuration files [Full tutorial]() - 
+ Here I introduce configuration files and why we use them.
+ I change the previous script to use configuration files.
  
 ## ToDo - List of things that will come in the future
 
