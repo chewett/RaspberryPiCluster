@@ -7,5 +7,5 @@ This will form the basis of logging what each node in the cluster is doing. One 
 that the logger should work for multi-threaded processes. This is why I introduce the standard python
 library "logging".
 
-Full blog post and tutorial is
-[available on my blog](https://chewett.co.uk/blog/741/raspberry-pi-cluster-node-01-logging-liveness/)
+The full details for
+[Tutorial 01 - Logging Liveness is available on my blog](https://chewett.co.uk/blog/741/raspberry-pi-cluster-node-01-logging-liveness/)
