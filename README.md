@@ -24,15 +24,21 @@ I move some of the common functionality into a package so more easily use across
 3. Basic node communication between two nodes [Full tutorial](https://chewett.co.uk/blog/901/raspberry-pi-cluster-node-03-basic-node-communication-two-nodes/) -
  Here I introduce sockets as a simple way of sending data between two concurrently running scripts.
 
-4. Configuration files [Full tutorial]() - 
+4. Configuration files [Full tutorial](https://chewett.co.uk/blog/1001/raspberry-pi-cluster-node-04-configuration-files-configparser/) - 
  Here I introduce configuration files and why we use them.
  I change the previous script to use configuration files.
  
+5. Sending data with JSON [Full tutorial](https://chewett.co.uk/)
+ Here I improve I the cluster sends data around by creating a JSON
+ based message format. The implementation is abstracted into a module
+ to allow easy modification without changing scripts that use it.
+ 
 ## ToDo - List of things that will come in the future
 
-* Config loading - Config parser
 * Socket talking - Slave to master
 * Socket talking - Master Broadcast
 * Socket talking - Master informs slaves of data
+* Socket talking - Replay attacks
+* Socket talking - Encryption
 * Config loading - JSON
 * Daemon Process -
