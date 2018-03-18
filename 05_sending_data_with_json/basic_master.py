@@ -19,6 +19,10 @@ socket.listen(1)
 (clientsocket, address) = socket.accept()
 logger.info("Got client at {address}".format(address=address))
 
-while True:
+message = True
+while message:
     message = get_message(clientsocket)
-    print message['msg']
+    if message:
+        logger.info("Received message: " + message['msg'])
+    else:
+        logger.info("Client disconnected")
