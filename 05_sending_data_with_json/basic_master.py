@@ -21,4 +21,4 @@ logger.info("Got client at {address}".format(address=address))
 
 while True:
     message = get_message(clientsocket)
-    print message
+    print message['msg']
