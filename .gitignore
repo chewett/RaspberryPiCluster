@@ -1,2 +1,4 @@
 .idea
 *.pyc
+*/master.log
+*/slave.log
