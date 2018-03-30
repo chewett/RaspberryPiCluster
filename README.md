@@ -28,7 +28,7 @@ I move some of the common functionality into a package so more easily use across
  Here I introduce configuration files and why we use them.
  I change the previous script to use configuration files.
  
-5. Sending data with JSON [Full tutorial](https://chewett.co.uk/) -
+5. Sending data with JSON [Full tutorial](https://chewett.co.uk/blog/1072/raspberry-pi-cluster-node-05-talking-to-nodes-with-json/) -
  Here I improve I the cluster sends data around by creating a JSON
  based message format. The implementation is abstracted into a module
  to allow easy modification without changing scripts that use it.

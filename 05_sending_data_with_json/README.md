@@ -10,6 +10,6 @@ in the future as the implementation will be abstracted into this module.
 
 The full details for
 [Tutorial 05 - Talking to nodes with JSON is available on my blog](
-https://chewett.co.uk/blog/
+https://chewett.co.uk/blog/1072/raspberry-pi-cluster-node-05-talking-to-nodes-with-json/
 )
 
