@@ -1,10 +1,10 @@
 import time
 import random
-import psutil
 import ConfigParser
-import multiprocessing
-import platform
 import socket
+import psutil
+import platform
+import multiprocessing
 from RpiCluster.MainLogger import add_file_logger, logger
 from RpiCluster.DataPackager import create_payload
 
@@ -38,7 +38,7 @@ machine_details = {
 }
 
 
-sock.send(create_payload(machine_details, 'computer_details'))
+sock.send(create_payload(machine_details, 'machine_details'))
 while True:
     time.sleep(5)
     sock.send(create_payload("I am still alive, client: {num}".format(num=client_number)))
