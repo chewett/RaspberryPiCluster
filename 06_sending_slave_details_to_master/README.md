@@ -3,7 +3,7 @@ Rasperry Pi Cluster project - 06
 
 
 The full details for
-[Tutorial 06 - Talking to nodes with JSON is available on my blog](
+[Tutorial 06 - ](
 https://chewett.co.uk/blog/
 )
 
