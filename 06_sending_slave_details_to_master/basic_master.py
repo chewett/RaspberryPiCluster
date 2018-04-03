@@ -30,7 +30,7 @@ while message:
             logger.info("Machine specifications: " + json.dumps(message['payload']))
         else:
             logger.warning("Unknown payload type {type}, payload content {content}".format(
-                type=message['type'], content=message['payload']
+                type=message['type'], content=json.dumps(message['payload'])
             ))
 
     else:
