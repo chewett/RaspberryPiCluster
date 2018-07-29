@@ -26,8 +26,12 @@ while message:
     if message:
         if message['type'] == 'message':
             logger.info("Received message: " + message['payload'])
-        elif message['type'] == 'computer_details':
-            logger.info("Computer specifications: " + json.dumps(message['payload']))
+        elif message['type'] == 'machine_details':
+            logger.info("Machine specifications: " + json.dumps(message['payload']))
+        else:
+            logger.warning("Unknown payload type {type}, payload content {content}".format(
+                type=message['type'], content=json.dumps(message['payload'])
+            ))
 
     else:
         logger.info("Client disconnected")
