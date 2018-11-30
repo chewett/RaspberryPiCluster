@@ -42,10 +42,17 @@ determine what action it needs to take for each message type.
  
 ## ToDo - List of things that will come in the future
 
-* Socket talking - Slave to master
 * Socket talking - Master Broadcast
-* Socket talking - Master informs slaves of data
 * Socket talking - Replay attacks
 * Socket talking - Encryption
 * Config loading - JSON
 * Daemon Process -
+* Master running simple webserver to offer files
+* Slave /Master version/updates
+* Multiple Slaves
+* Periodic updates of the system
+* Storing state of the cluster node
+* Report Health metrics back (uptime, updates pending, time correctness, disk space)
+* Rejoining the cluster after a master restart
+* Smart slave restart
+
