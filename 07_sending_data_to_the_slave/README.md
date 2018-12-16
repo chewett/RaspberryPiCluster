@@ -12,7 +12,7 @@ control the slave further. These will form the basis of the master requesting
 the slave to perform computation.
 
 The full details for
-[Tutorial 07 - Sending data to the Slave](
+[Tutorial 07 - Sending data to the Slave is available on my blog](
 https://chewett.co.uk/blog/1781/raspberry-pi-cluster-node-07-sending-data-to-the-slave/
 )
 

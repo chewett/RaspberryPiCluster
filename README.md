@@ -33,12 +33,21 @@ I move some of the common functionality into a package so more easily use across
  based message format. The implementation is abstracted into a module
  to allow easy modification without changing scripts that use it.
 
-6. **Sending Slave Details to the Master [Full tutorial](https://chewett.co.uk/blog/)** -
+6. **Sending Slave Details to the Master [Full tutorial](https://chewett.co.uk/blog/1098/raspberry-pi-cluster-node-06-sending-slave-details-to-the-master/)** -
  This tutorial focuses on modifying the original data sending functions
 to use a more generic format. This will allow the master to read what messages are being received and
 determine what action it needs to take for each message type.
 
+7. **Sending data to the Slave [Full tutorial](https://chewett.co.uk/blog/1781/raspberry-pi-cluster-node-07-sending-data-to-the-slave/)** -
+ This tutorial focuses on improving the slave by being able to request
+data from the master.
  
+8. **Slave Helper Functions [Full tutorial](https://chewett.co.uk/blog/)** -
+ This tutorial focuses on creating a number of slave helper functions
+to begin the process of fully automating the slaves.
+ 
+
+
  
 ## ToDo - List of things that will come in the future
 
@@ -55,4 +64,8 @@ determine what action it needs to take for each message type.
 * Report Health metrics back (uptime, updates pending, time correctness, disk space)
 * Rejoining the cluster after a master restart
 * Smart slave restart
+* Restarting slave once rebooted
+* Keeping track of the running code revision
+* Why keeping track of the time is important
+* Slave git stash, pull, stash pop, resolving. 
 
