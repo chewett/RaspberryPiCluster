@@ -1,5 +1,5 @@
-Rasperry Pi Cluster project - 02 Packaging common functionality
-===============================================================
+Raspberry Pi Cluster project - 02 Packaging common functionality
+================================================================
 
 This second post builds on the first by packaging up the logging code we created last time.
 

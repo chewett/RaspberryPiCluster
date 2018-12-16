@@ -1,5 +1,5 @@
-Rasperry Pi Cluster project - 05 Talking to nodes with JSON
-===========================================================
+Raspberry Pi Cluster project - 05 Talking to nodes with JSON
+============================================================
 
 In this tutorial I am using JSON to send messages between the nodes in a machine
 readable format.

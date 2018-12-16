@@ -1,5 +1,5 @@
-Rasperry Pi Cluster project - 04 Configuration Files with ConfigParser
-======================================================================
+Raspberry Pi Cluster project - 04 Configuration Files with ConfigParser
+=======================================================================
 
 Here I am using moving some of the configuration data from being hardcoded into the scripts into configuration files.
 

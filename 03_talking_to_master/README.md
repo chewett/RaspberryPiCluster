@@ -1,5 +1,5 @@
-Rasperry Pi Cluster project - 03 Basic node communication between two nodes
-===========================================================================
+Raspberry Pi Cluster project - 03 Basic node communication between two nodes
+============================================================================
 
 
 In this tutorial we build a very basic one way communication method to send data from the slave to a master.

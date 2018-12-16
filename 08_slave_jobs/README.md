@@ -1,9 +1,9 @@
-Rasperry Pi Cluster project - 07 
+Raspberry Pi Cluster project - 08 
 ===========================================================
 
 
 The full details for
-[Tutorial 07 -](
+[Tutorial 08 -](
 https://chewett.co.uk/blog/
 )
 

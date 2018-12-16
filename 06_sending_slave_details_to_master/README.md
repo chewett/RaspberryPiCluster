@@ -1,5 +1,5 @@
-Rasperry Pi Cluster project - 06 Sending Slave Details to the Master
-====================================================================
+Raspberry Pi Cluster project - 06 Sending Slave Details to the Master
+=====================================================================
 
 This tutorial focuses on modifying the original data sending functions
 to use a more generic format.

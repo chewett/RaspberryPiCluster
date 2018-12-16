@@ -1,5 +1,5 @@
-Rasperry Pi Cluster project - 01 Logging Liveness
-=================================================
+Raspnerry Pi Cluster project - 01 Logging Liveness
+==================================================
 
 In the first tutorial I talked about setting up a simple python script to log data to a file every 10 seconds.
 
