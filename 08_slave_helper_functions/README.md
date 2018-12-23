@@ -13,6 +13,6 @@ The next tutorial will focus on converting the master script
 
 The full details for
 [Tutorial 08 - Slave Helper Functions is available on my blog](
-https://chewett.co.uk/blog/
+https://chewett.co.uk/blog/1839/raspberry-pi-cluster-node-08-slave-helper-functions/
 )
 

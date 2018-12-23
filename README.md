@@ -42,7 +42,7 @@ determine what action it needs to take for each message type.
  This tutorial focuses on improving the slave by being able to request
 data from the master.
  
-8. **Slave Helper Functions [Full tutorial](https://chewett.co.uk/blog/)** -
+8. **Slave Helper Functions [Full tutorial](https://chewett.co.uk/blog/1839/raspberry-pi-cluster-node-08-slave-helper-functions/)** -
  This tutorial focuses on creating a number of slave helper functions
 to begin the process of fully automating the slaves.
  
