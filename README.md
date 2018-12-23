@@ -46,7 +46,9 @@ data from the master.
  This tutorial focuses on creating a number of slave helper functions
 to begin the process of fully automating the slaves.
  
-
+9. **Multi Slave Master [Full tutorial - UNRELEASED SO FAR]()** - 
+ This tutorial focuses on changing the master so that it accepts
+multiple slaves connecting to it.
 
  
 ## ToDo - List of things that will come in the future
@@ -58,7 +60,6 @@ to begin the process of fully automating the slaves.
 * Daemon Process -
 * Master running simple webserver to offer files
 * Slave /Master version/updates
-* Multiple Slaves
 * Periodic updates of the system
 * Storing state of the cluster node
 * Report Health metrics back (uptime, updates pending, time correctness, disk space)
