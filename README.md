@@ -46,7 +46,7 @@ data from the master.
  This tutorial focuses on creating a number of slave helper functions
 to begin the process of fully automating the slaves.
  
-9. **Multi Slave Master [Full tutorial - UNRELEASED SO FAR]()** - 
+9. **Multi Slave Master [Full tutorial](https://chewett.co.uk/blog/1872/raspberry-pi-cluster-node-09-multi-slave-master/)** - 
  This tutorial focuses on changing the master so that it accepts
 multiple slaves connecting to it.
 
