@@ -1,5 +1,8 @@
-Raspberry Pi Cluster project - 09 Multi Slave Master
-====================================================
+Raspberry Pi Cluster project - 10 More Advanced Connection Handling
+===================================================================
+
+
+
 
 This tutorial focuses on changing the master so that it accepts
 multiple slaves connecting to it.
