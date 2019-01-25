@@ -50,6 +50,13 @@ to begin the process of fully automating the slaves.
  This tutorial focuses on changing the master so that it accepts
 multiple slaves connecting to it.
 
+10. **More Advanced Connection Handling [Full tutorial](https://chewett.co.uk/blog/1913/raspberry-pi-cluster-node-10-more-advanced-connection-handling/)** -
+ This tutorial focuses on improving the connecting handling code
+by adding an exception that is thrown when a node encounters issues. 
+
+11. **Automatic Slave Reconnection [Full tutorial]()** -
+ //TODO
+
  
 ## ToDo - List of things that will come in the future
 
