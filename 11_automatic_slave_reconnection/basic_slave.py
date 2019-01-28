@@ -20,11 +20,10 @@ logger.info("Starting script...")
 
 sock = None
 client_number = random.randint(1, 100000)
+server_address = (master_ip, socket_port)
 
 while True:
     logger.info("Connecting to the master...")
-    server_address = (master_ip, socket_port)
-
     connected = False
     while connected is False:
         try:

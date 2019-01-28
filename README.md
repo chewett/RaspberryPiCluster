@@ -55,7 +55,8 @@ multiple slaves connecting to it.
 by adding an exception that is thrown when a node encounters issues. 
 
 11. **Automatic Slave Reconnection [Full tutorial]()** -
- //TODO
+This tutorial focuses on changing the slave so that it will
+automatically reconnect to the master if the connection is lost.
 
  
 ## ToDo - List of things that will come in the future

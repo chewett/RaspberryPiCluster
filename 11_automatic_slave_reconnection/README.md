@@ -2,18 +2,18 @@ Raspberry Pi Cluster project - 11 Automatic Slave Reconnection
 ==============================================================
 
 This tutorial focuses on changing the slave so that it will
-reconnect whenever the master is restarted.
+automatically reconnect to the master if the connection is lost.
 
-Currently when the master disconnects the slaves all stop.
-This works well for an initial implementation but means the
-slaves need to be manually restarted.
+With this addition the slave will automatically reconnect to the master
+no matter how many times it has been restarted. This moves
+the cluster one step forward towards a system which will 
+automatically repair if there is an issue.
 
-The next tutorial will focus on...
-
-
+The next tutorial will focus on looking at how we can make
+the cluster code run on boot using rc.local.
 
 The full details for
 [Tutorial 11 - Automatic Slave Reconnection is available on my blog](
-https://chewett.co.uk/blog/1872/raspberry-pi-cluster-node-09-multi-slave-master/
+
 )
 
