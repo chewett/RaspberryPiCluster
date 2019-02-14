@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 import socket
 import ConfigParser
 from RpiCluster.MainLogger import add_file_logger, logger
