@@ -17,6 +17,6 @@ logger.addHandler(consoleHandler)
 
 def add_file_logger(filename):
     # Create a handler to store the logs to a file
-    fileHandler = logging.FileHandler(os.path.join(os.path.dirname(os.path.realpath(__file__)), filename))
+    fileHandler = logging.FileHandler(os.path.abspath(os.path.join(os.path.dirname(os.path.realpath(__file__)), "..", filename)))
     fileHandler.setFormatter(logFormatter)
     logger.addHandler(fileHandler)
