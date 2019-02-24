@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 
+import os
 import time
 import random
 import ConfigParser
@@ -11,7 +12,7 @@ from RpiCluster.MachineInfo import get_base_machine_info
 from RpiCluster.RpiClusterExceptions import DisconnectionException
 
 config = ConfigParser.ConfigParser()
-config.read('rpicluster.cfg')
+config.read(os.path.join(os.path.dirname(os.path.realpath(__file__)), 'rpicluster.cfg'))
 
 socket_port = config.getint("slave", "socket_port")
 master_ip = config.get("slave", "master_ip")
