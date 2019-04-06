@@ -1,5 +1,4 @@
 .idea
 *.pyc
-*/master.log
-*/slave.log
+*/*.log
 */rpicluster.cfg
