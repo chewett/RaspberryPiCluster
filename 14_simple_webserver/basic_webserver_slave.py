@@ -23,7 +23,8 @@ from bottle import route, run, template
 
 @route('/')
 def index():
-    return template('<html><body>See status.json</body></html>')
+    return template("templates/ClusterHomepage.html",
+                    info=json.dumps(RpiWebserverSlaveThread.current_webserver_data, indent=4, sort_keys=True))
 
 @route('/status.json')
 def status_json():
