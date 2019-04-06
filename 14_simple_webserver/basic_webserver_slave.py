@@ -11,6 +11,8 @@ config.read(os.path.join(os.path.dirname(os.path.realpath(__file__)), 'rpicluste
 
 socket_port = config.getint("slave", "socket_port")
 master_ip = config.get("slave", "master_ip")
+webserver_host = config.get("webserver", "webserver_host")
+webserver_port = config.get("webserver", "webserver_port")
 
 add_file_logger("webserver_slave.log")
 
@@ -33,4 +35,4 @@ def status_json():
 
 
 
-run(host='localhost', port=8123)
+run(host=webserver_host, port=webserver_port)
