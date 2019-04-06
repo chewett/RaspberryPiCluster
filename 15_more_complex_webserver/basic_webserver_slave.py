@@ -26,4 +26,9 @@ def index():
     return template("templates/ClusterHomepage.html",
                     info=json.dumps(RpiWebserverSlaveThread.current_webserver_data, indent=4, sort_keys=True))
 
+
+@route('/status.json')
+def status_json():
+    return template(json.dumps(RpiWebserverSlaveThread.current_webserver_data))
+
 run(host=webserver_host, port=webserver_port)
