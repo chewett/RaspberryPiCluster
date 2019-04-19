@@ -2,8 +2,6 @@ import time
 import datetime
 from MainLogger import logger
 from DataPackager import create_payload, get_message, send_message
-from MachineInfo import get_base_machine_info
-from RpiClusterExceptions import DisconnectionException
 from RpiBasicSlaveThread import RpiBasicSlaveThread
 
 
