@@ -26,8 +26,8 @@ class RpiClusterClient(threading.Thread):
                 if message['type'] == 'message':
                     logger.info("Received message: " + message['payload'])
                 elif message['type'] == 'computer_details':
-                    self.node_specifications = json.dumps(message['payload'])
-                    logger.info("Recieved Computer specifications: " + json.dumps(message['payload']))
+                    self.node_specifications = message['payload']
+                    logger.info("Received Computer specifications: " + json.dumps(self.node_specifications))
                 elif message['type'] == 'info':
                     logger.info("Slave wants to know my info about " + message['payload'])
                     if message['payload'] == 'computer_details':
