@@ -24,7 +24,9 @@ webserver_slave_thread.start()
 @route('/')
 def index():
     return template("templates/ClusterHomepage.html",
-                    info=json.dumps(RpiWebserverSlaveThread.current_webserver_data, indent=4, sort_keys=True))
+                    masterinfo=json.dumps(RpiWebserverSlaveThread.current_master_details, indent=4, sort_keys=True),
+                    slaveinfo=json.dumps(RpiWebserverSlaveThread.current_slave_details, indent=4, sort_keys=True)
+                    )
 
 
 @route('/status.json')
