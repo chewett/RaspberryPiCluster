@@ -37,6 +37,7 @@ to run on as Raspberry Pi.
 Python modules required:
 * All Base modules
 * psutil
+* bottle
 
 ## Licence
 
