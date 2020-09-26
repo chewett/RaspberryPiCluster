@@ -14,17 +14,17 @@ Later we will get onto more complicated topics such as reaching a consensus of w
 
 Questions comments and suggestions can be raised the specific blog post or by using issues here.
 
-## Tutorial 2 -  Packaging common functionality - [Full tutorial](https://chewett.co.uk/blog/881/raspberry-pi-cluster-node-02-packaging-common-functionality/) 
+## Tutorial 3 - Basic node communication between two nodes
 
-This second post builds on the first by packaging up the logging code we created last time.
+In this tutorial we build a very basic one way communication method to send data from the slave to a master.
 
-As I am planning on running the cluster with a number of scripts for the server and client I need
-to be able to share the code. This will remove duplication and means we have standard ways of
-doing common operations. We will start by creating the common package structure to hold our code.
+The basis of any cluster is being able to collaborate and communicate between nodes. This initial implementation
+of this will create a connection between a master and slave node and send data from slave to master.
+The master will print out any messages recieved from the slave. The slave will send a message every 10 seconds
+with a message.
 
 The full details for
-[Tutorial 02 - Packaging common functionality is available on my blog](https://chewett.co.uk/blog/881/raspberry-pi-cluster-node-02-packaging-common-functionality/)
-
+[Tutorial 03 - Basic node communication between two nodes is available on my blog](https://chewett.co.uk/blog/901/raspberry-pi-cluster-node-03-basic-node-communication-two-nodes/)
 
 ## Licence
 
