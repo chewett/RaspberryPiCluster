@@ -14,16 +14,18 @@ Later we will get onto more complicated topics such as reaching a consensus of w
 
 Questions comments and suggestions can be raised the specific blog post or by using issues here.
 
-## Tutorial 12 - Automatic Start with rc.local
+## Tutorial 13 - Abstracting Slave Code
 
-This tutorial focuses on modifying our script to automatically start using rc.local.
- Some changes will be needed to ensure it works after being run from any location.
+This tutorial focuses on abstracting the slave code to be more extensible.
+I create a general purpose class which is used by each Slave Thread.
+This will include the ability to customise the slave more generally
+while maintaining a common core.
 
-The next tutorial will focus on abstracting the slave code to be more extensible.
+The next tutorial will focus on adding a simple webserver to the core of the code.
 
 The full details for
-[Tutorial 12 - Automatic Start with rc.local is available on my blog](
-https://chewett.co.uk/blog/2002/raspberry-pi-cluster-node-12-automatic-start-with-rc-local/
+[Tutorial 13 - Abstracting Slave Code](
+https://chewett.co.uk/blog/2090/raspberry-pi-cluster-node-13-abstracting-slave-code/
 )
 
 ## Requirements
