@@ -14,21 +14,21 @@ Later we will get onto more complicated topics such as reaching a consensus of w
 
 Questions comments and suggestions can be raised the specific blog post or by using issues here.
 
-## Tutorial 7 - Sending data to the Slave
+## Tutorial 8 - Slave Helper Functions
 
-This tutorial focuses on improving the slave by being able to request
-data from the master.
+This tutorial focuses on creating a number of slave helper functions
+ to begin the process of fully automating the slaves.
+ 
+A few simple commands such as shutting down a node and rebooting
+ it along with updating the operating system are added ready for
+ implementation.
 
-This will be further worked on in future tutorials to keep a state of the
-cluster in each slave node.
-
-In the next post I will look at adding a few more payloads to let the master
-control the slave further. These will form the basis of the master requesting
-the slave to perform computation.
+The next tutorial will focus on converting the master script
+ to accept any number of slave nodes.
 
 The full details for
-[Tutorial 07 - Sending data to the Slave is available on my blog](
-https://chewett.co.uk/blog/1781/raspberry-pi-cluster-node-07-sending-data-to-the-slave/
+[Tutorial 08 - Slave Helper Functions is available on my blog](
+https://chewett.co.uk/blog/1839/raspberry-pi-cluster-node-08-slave-helper-functions/
 )
 
 ## Requirements
