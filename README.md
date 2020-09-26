@@ -14,23 +14,21 @@ Later we will get onto more complicated topics such as reaching a consensus of w
 
 Questions comments and suggestions can be raised the specific blog post or by using issues here.
 
-## Tutorial 6 - Sending Slave Details to the Master
+## Tutorial 7 - Sending data to the Slave
 
-This tutorial focuses on modifying the original data sending functions
-to use a more generic format.
+This tutorial focuses on improving the slave by being able to request
+data from the master.
 
-This will allow the master to read what messages are being received and
-determine what action it needs to take for each message type.
+This will be further worked on in future tutorials to keep a state of the
+cluster in each slave node.
 
-Once this is done there will be a versatile system for receiving messages
-from a node and processing them.
-
-In the future tutorials I will look into creating a two-way dialogue between
-the master and slave.
+In the next post I will look at adding a few more payloads to let the master
+control the slave further. These will form the basis of the master requesting
+the slave to perform computation.
 
 The full details for
-[Tutorial 06 - Sending Slave Details to the Master is available on my blog](
-https://chewett.co.uk/blog/1098/raspberry-pi-cluster-node-06-sending-slave-details-to-the-master/
+[Tutorial 07 - Sending data to the Slave is available on my blog](
+https://chewett.co.uk/blog/1781/raspberry-pi-cluster-node-07-sending-data-to-the-slave/
 )
 
 ## Requirements
