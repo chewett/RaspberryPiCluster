@@ -33,6 +33,15 @@ The full details for
 https://chewett.co.uk/blog/1098/raspberry-pi-cluster-node-06-sending-slave-details-to-the-master/
 )
 
+## Requirements
+
+This code should run on anything with Python 2 installed but is developed
+to run on as Raspberry Pi.
+
+Python modules required:
+* All Base modules
+* psutil
+
 ## Licence
 
 All code in this repository is licenced under a MIT licence.
