@@ -13,7 +13,7 @@ class RpiBasicSlaveThread(threading.Thread):
 
     def __init__(self, master_ip, socket_port):
         threading.Thread.__init__(self)
-        self.client_number = random.randint(1, 100000)
+        self.uuid = None
         self.server_address = (master_ip, socket_port)
         self.sock = None
 
@@ -36,6 +36,11 @@ class RpiBasicSlaveThread(threading.Thread):
 
             try:
                 logger.info("Sending an initial hello to master")
+                send_message(self.sock, create_payload("uuid", "info"))
+                message = get_message(self.sock)
+                self.uuid = message['payload']
+                logger.info("My assigned UUID is " + self.uuid)
+
                 send_message(self.sock, create_payload(get_base_machine_info(), 'computer_details'))
                 send_message(self.sock, create_payload("computer_details", "info"))
 
@@ -51,7 +56,7 @@ class RpiBasicSlaveThread(threading.Thread):
 
     def perform_action(self):
         logger.info("Now sending a keepalive to the master")
-        send_message(self.sock, create_payload("I am still alive, client: {num}".format(num=self.client_number)))
+        send_message(self.sock, create_payload("I am still alive, client: {num}".format(num=self.uuid)))
         time.sleep(5)
 
 

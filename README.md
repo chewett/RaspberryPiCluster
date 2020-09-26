@@ -14,19 +14,17 @@ Later we will get onto more complicated topics such as reaching a consensus of w
 
 Questions comments and suggestions can be raised the specific blog post or by using issues here.
 
-## Tutorial 14 - A simple webserver
+## Tutorial 15 - A more complex webserver
 
-This tutorial focuses on creating a simple webserver that displays
-the status of the master using the python library Bottle.
-This will form the basis of having a simple web interface to view
-the progress of the cluster and control it.
+This tutorial adds to the previous one by improving the display of the webserver
+by including information about the slaves attached. In addition to this the
+slaves are modified to use a UUID rather than a random integer to define them.
 
-The next tutorial will focus on improving the webserver to display
-slave information in addition to the current information.
+The next tutorial will focus on cleaning up the codebase in preparation for new features.
 
 The full details for
-[Tutorial 14 - A simple webserver](
-https://chewett.co.uk/blog/2127/raspberry-pi-cluster-node-14-a-simple-webserver/
+[Tutorial 15 - A more complex webserver](
+https://chewett.co.uk/blog/2179/raspberry-pi-cluster-node-15-a-more-complex-webserver/
 )
 
 ## Requirements
