@@ -2,8 +2,9 @@
 
 import socket
 import ConfigParser
+import json
 from RpiCluster.MainLogger import add_file_logger, logger
-from RpiCluster.DataPackager import MESSAGE_SEPARATOR, get_message
+from RpiCluster.DataPackager import get_message
 
 config = ConfigParser.ConfigParser()
 config.read('rpicluster.cfg')
@@ -25,6 +26,14 @@ message = True
 while message:
     message = get_message(clientsocket)
     if message:
-        logger.info("Received message: " + message['msg'])
+        if message['type'] == 'message':
+            logger.info("Received message: " + message['payload'])
+        elif message['type'] == 'machine_details':
+            logger.info("Machine specifications: " + json.dumps(message['payload']))
+        else:
+            logger.warning("Unknown payload type {type}, payload content {content}".format(
+                type=message['type'], content=json.dumps(message['payload'])
+            ))
+
     else:
         logger.info("Client disconnected")

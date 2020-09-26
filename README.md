@@ -14,18 +14,24 @@ Later we will get onto more complicated topics such as reaching a consensus of w
 
 Questions comments and suggestions can be raised the specific blog post or by using issues here.
 
-## Tutorial 5 - Talking to nodes with JSON
+## Tutorial 6 - Sending Slave Details to the Master
 
-In this tutorial I am using JSON to send messages between the nodes in a machine
-readable format.
+This tutorial focuses on modifying the original data sending functions
+to use a more generic format.
 
-To make it easy to extend across various scripts I am packaging the functionality
-in a DataPackager module. This will allow me to modify how the cluster talks
-in the future as the implementation will be abstracted into this module.
+This will allow the master to read what messages are being received and
+determine what action it needs to take for each message type.
+
+Once this is done there will be a versatile system for receiving messages
+from a node and processing them.
+
+In the future tutorials I will look into creating a two-way dialogue between
+the master and slave.
 
 The full details for
-[Tutorial 05 - Talking to nodes with JSON is available on my blog](
-https://chewett.co.uk/blog/1072/raspberry-pi-cluster-node-05-talking-to-nodes-with-json/)
+[Tutorial 06 - Sending Slave Details to the Master is available on my blog](
+https://chewett.co.uk/blog/1098/raspberry-pi-cluster-node-06-sending-slave-details-to-the-master/
+)
 
 ## Licence
 

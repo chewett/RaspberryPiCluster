@@ -3,8 +3,9 @@ import json
 
 MESSAGE_SEPARATOR = "\r"
 
-def create_msg_payload(message):
-    return json.dumps({'msg': message}) + MESSAGE_SEPARATOR
+
+def create_payload(payload, payload_type="message"):
+    return json.dumps({"type": payload_type, "payload": payload}) + MESSAGE_SEPARATOR
 
 
 _buffered_string = ""
