@@ -1,4 +1,0 @@
-
-@route('/status.json')
-def status_json():
-    return template(json.dumps(RpiWebserverSlaveThread.current_webserver_data))
