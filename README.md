@@ -14,16 +14,17 @@ Later we will get onto more complicated topics such as reaching a consensus of w
 
 Questions comments and suggestions can be raised the specific blog post or by using issues here.
 
-## Tutorial 1 - Logging Liveness - [Full tutorial](https://chewett.co.uk/blog/741/raspberry-pi-cluster-node-01-logging-liveness/) 
- 
-In the first tutorial I talked about setting up a simple python script to log data to a file every 10 seconds.
+## Tutorial 2 -  Packaging common functionality - [Full tutorial](https://chewett.co.uk/blog/881/raspberry-pi-cluster-node-02-packaging-common-functionality/) 
 
-This will form the basis of logging what each node in the cluster is doing. One of the requirements is
-that the logger should work for multi-threaded processes. This is why I introduce the standard python
-library "logging".
+This second post builds on the first by packaging up the logging code we created last time.
+
+As I am planning on running the cluster with a number of scripts for the server and client I need
+to be able to share the code. This will remove duplication and means we have standard ways of
+doing common operations. We will start by creating the common package structure to hold our code.
 
 The full details for
-[Tutorial 01 - Logging Liveness is available on my blog](https://chewett.co.uk/blog/741/raspberry-pi-cluster-node-01-logging-liveness/)
+[Tutorial 02 - Packaging common functionality is available on my blog](https://chewett.co.uk/blog/881/raspberry-pi-cluster-node-02-packaging-common-functionality/)
+
 
 ## Licence
 
