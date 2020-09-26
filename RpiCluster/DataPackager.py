@@ -1,5 +1,6 @@
 import socket
 import json
+from RpiClusterExceptions import DisconnectionException
 
 MESSAGE_SEPARATOR = "\r"
 
@@ -42,7 +43,8 @@ def get_message(clientsocket):
         try:
             data = clientsocket.recv(512) #Get at max 512 bytes of data from the client
         except socket.error: #If we failed to get data, assume they have disconnected
-            return None
+            raise DisconnectionException("Failed to receive messages, client has disconnected")
+
         data_len = len(data)
         if data_len > 0: #Do something if we got data
             _buffered_string += data #Keep track of our buffered stored data
@@ -52,4 +54,13 @@ def get_message(clientsocket):
             if message_in_buffer:
                 return message_in_buffer
         else:
-            return None
+            raise DisconnectionException("No further messages received, client has disconnected")
+
+
+def send_message(clientsocket, payload):
+    try:
+        clientsocket.send(payload)
+        return True
+    except socket.error:
+        raise DisconnectionException("Failed to send message")
+

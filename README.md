@@ -14,17 +14,18 @@ Later we will get onto more complicated topics such as reaching a consensus of w
 
 Questions comments and suggestions can be raised the specific blog post or by using issues here.
 
-## Tutorial 9 - Multi Slave Master
+## Tutorial 10 - More Advanced Connection Handling
 
-This tutorial focuses on changing the master so that it accepts
-multiple slaves connecting to it.
+This tutorial focuses on improving the master and slaves connection
+handling code. Here I am going to add a custom exception that can
+be used in the event of disconnection.
 
-Currently there is no error handling for nodes connecting and disconnecting.
-The next tutorial will focus on hardening the master and slaves connection/disconnection code.
+In the next tutorial we will look at improving the slave so that if
+the master goes down, it will rejoin at the next opportunity.
 
 The full details for
-[Tutorial 09 - Multi Slave Master is available on my blog](
-https://chewett.co.uk/blog/1872/raspberry-pi-cluster-node-09-multi-slave-master/
+[Tutorial 10 - More Advanced Connection Handling is available on my blog](
+https://chewett.co.uk/blog/1913/raspberry-pi-cluster-node-10-more-advanced-connection-handling/
 )
 
 ## Requirements
