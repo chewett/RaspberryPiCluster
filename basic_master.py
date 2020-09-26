@@ -1,3 +1,5 @@
+#!/usr/bin/env python2.7
+
 import socket
 from RpiCluster.MainLogger import add_file_logger, logger
 
