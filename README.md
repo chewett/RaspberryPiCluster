@@ -14,18 +14,19 @@ Later we will get onto more complicated topics such as reaching a consensus of w
 
 Questions comments and suggestions can be raised the specific blog post or by using issues here.
 
-## Tutorial 13 - Abstracting Slave Code
+## Tutorial 14 - A simple webserver
 
-This tutorial focuses on abstracting the slave code to be more extensible.
-I create a general purpose class which is used by each Slave Thread.
-This will include the ability to customise the slave more generally
-while maintaining a common core.
+This tutorial focuses on creating a simple webserver that displays
+the status of the master using the python library Bottle.
+This will form the basis of having a simple web interface to view
+the progress of the cluster and control it.
 
-The next tutorial will focus on adding a simple webserver to the core of the code.
+The next tutorial will focus on improving the webserver to display
+slave information in addition to the current information.
 
 The full details for
-[Tutorial 13 - Abstracting Slave Code](
-https://chewett.co.uk/blog/2090/raspberry-pi-cluster-node-13-abstracting-slave-code/
+[Tutorial 14 - A simple webserver](
+https://chewett.co.uk/blog/2127/raspberry-pi-cluster-node-14-a-simple-webserver/
 )
 
 ## Requirements
