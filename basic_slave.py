@@ -1,10 +1,10 @@
-#!/usr/bin/env python2.7
-
 import time
 import socket
 import random
+import json
 import ConfigParser
 from RpiCluster.MainLogger import add_file_logger, logger
+from RpiCluster.DataPackager import create_msg_payload
 
 config = ConfigParser.ConfigParser()
 config.read('rpicluster.cfg')
@@ -25,7 +25,7 @@ sock.connect(server_address)
 client_number = random.randint(1, 100000)
 
 logger.info("Sending an initial hello to master")
-sock.send("Hello World, I am client {num}".format(num=client_number))
+sock.send(create_msg_payload("Hello World, I am client {num}".format(num=client_number)))
 while True:
     time.sleep(5)
-    sock.send("I am still alive, client: {num}".format(num=client_number))
+    sock.send(create_msg_payload("I am still alive, client: {num}".format(num=client_number)))

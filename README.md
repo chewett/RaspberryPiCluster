@@ -14,17 +14,18 @@ Later we will get onto more complicated topics such as reaching a consensus of w
 
 Questions comments and suggestions can be raised the specific blog post or by using issues here.
 
-## Tutorial 4 - Configuration Files with ConfigParser
+## Tutorial 5 - Talking to nodes with JSON
 
-Here I am using moving some of the configuration data from being hardcoded into the scripts into configuration files.
+In this tutorial I am using JSON to send messages between the nodes in a machine
+readable format.
 
-As I deploy the scripts to the nodes I don't want to have to change the scripts for each node.
-Instead I am going to use configuration files to store data specific to the node such as the name of the node.
-By using a specific configuration parsing module we can easily keep track of variables that are required
-to be stored.
+To make it easy to extend across various scripts I am packaging the functionality
+in a DataPackager module. This will allow me to modify how the cluster talks
+in the future as the implementation will be abstracted into this module.
 
 The full details for
-[Tutorial 04 - Configuration Files with ConfigParser is available on my blog](https://chewett.co.uk/blog/1001/raspberry-pi-cluster-node-04-configuration-files-configparser/)
+[Tutorial 05 - Talking to nodes with JSON is available on my blog](
+https://chewett.co.uk/blog/1072/raspberry-pi-cluster-node-05-talking-to-nodes-with-json/)
 
 ## Licence
 
