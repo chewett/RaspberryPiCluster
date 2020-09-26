@@ -14,17 +14,17 @@ Later we will get onto more complicated topics such as reaching a consensus of w
 
 Questions comments and suggestions can be raised the specific blog post or by using issues here.
 
-## Tutorial 3 - Basic node communication between two nodes
+## Tutorial 4 - Configuration Files with ConfigParser
 
-In this tutorial we build a very basic one way communication method to send data from the slave to a master.
+Here I am using moving some of the configuration data from being hardcoded into the scripts into configuration files.
 
-The basis of any cluster is being able to collaborate and communicate between nodes. This initial implementation
-of this will create a connection between a master and slave node and send data from slave to master.
-The master will print out any messages recieved from the slave. The slave will send a message every 10 seconds
-with a message.
+As I deploy the scripts to the nodes I don't want to have to change the scripts for each node.
+Instead I am going to use configuration files to store data specific to the node such as the name of the node.
+By using a specific configuration parsing module we can easily keep track of variables that are required
+to be stored.
 
 The full details for
-[Tutorial 03 - Basic node communication between two nodes is available on my blog](https://chewett.co.uk/blog/901/raspberry-pi-cluster-node-03-basic-node-communication-two-nodes/)
+[Tutorial 04 - Configuration Files with ConfigParser is available on my blog](https://chewett.co.uk/blog/1001/raspberry-pi-cluster-node-04-configuration-files-configparser/)
 
 ## Licence
 
