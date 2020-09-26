@@ -14,21 +14,17 @@ Later we will get onto more complicated topics such as reaching a consensus of w
 
 Questions comments and suggestions can be raised the specific blog post or by using issues here.
 
-## Tutorial 8 - Slave Helper Functions
+## Tutorial 9 - Multi Slave Master
 
-This tutorial focuses on creating a number of slave helper functions
- to begin the process of fully automating the slaves.
- 
-A few simple commands such as shutting down a node and rebooting
- it along with updating the operating system are added ready for
- implementation.
+This tutorial focuses on changing the master so that it accepts
+multiple slaves connecting to it.
 
-The next tutorial will focus on converting the master script
- to accept any number of slave nodes.
+Currently there is no error handling for nodes connecting and disconnecting.
+The next tutorial will focus on hardening the master and slaves connection/disconnection code.
 
 The full details for
-[Tutorial 08 - Slave Helper Functions is available on my blog](
-https://chewett.co.uk/blog/1839/raspberry-pi-cluster-node-08-slave-helper-functions/
+[Tutorial 09 - Multi Slave Master is available on my blog](
+https://chewett.co.uk/blog/1872/raspberry-pi-cluster-node-09-multi-slave-master/
 )
 
 ## Requirements
