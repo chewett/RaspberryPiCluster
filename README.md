@@ -14,15 +14,17 @@ Later we will get onto more complicated topics such as reaching a consensus of w
 
 Questions comments and suggestions can be raised the specific blog post or by using issues here.
 
-## Tutorial 11 - Automatic Slave Reconnection
+## Tutorial 12 - Automatic Start with rc.local
 
-This tutorial focuses on changing the slave so that it will automatically reconnect to the master if the connection is lost.
+This tutorial focuses on modifying our script to automatically start using rc.local.
+ Some changes will be needed to ensure it works after being run from any location.
 
-With this addition the slave will automatically reconnect to the master no matter how many times it has been restarted. This moves the cluster one step forward towards a system which will automatically repair if there is an issue.
+The next tutorial will focus on abstracting the slave code to be more extensible.
 
-The next tutorial will focus on looking at how we can make the cluster code run on boot using rc.local.
-
-The full details for [Tutorial 11 - Automatic Slave Reconnection is available on my blog](https://chewett.co.uk/blog/1964/raspberry-pi-cluster-node-11-automatic-slave-reconnection/)
+The full details for
+[Tutorial 12 - Automatic Start with rc.local is available on my blog](
+https://chewett.co.uk/blog/2002/raspberry-pi-cluster-node-12-automatic-start-with-rc-local/
+)
 
 ## Requirements
 
