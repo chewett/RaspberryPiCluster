@@ -14,18 +14,16 @@ Later we will get onto more complicated topics such as reaching a consensus of w
 
 Questions comments and suggestions can be raised the specific blog post or by using issues here.
 
-## Tutorial 10 - More Advanced Connection Handling
+## Tutorial 11 - 11 Automatic Slave Reconnection
 
-This tutorial focuses on improving the master and slaves connection
-handling code. Here I am going to add a custom exception that can
-be used in the event of disconnection.
+This tutorial focuses on changing the slave so that it will automatically reconnect to the master if the connection is lost.
 
-In the next tutorial we will look at improving the slave so that if
-the master goes down, it will rejoin at the next opportunity.
+With this addition the slave will automatically reconnect to the master no matter how many times it has been restarted. This moves the cluster one step forward towards a system which will automatically repair if there is an issue.
 
-The full details for
-[Tutorial 10 - More Advanced Connection Handling is available on my blog](
-https://chewett.co.uk/blog/1913/raspberry-pi-cluster-node-10-more-advanced-connection-handling/
+The next tutorial will focus on looking at how we can make the cluster code run on boot using rc.local.
+
+The full details for [Tutorial 11 - Automatic Slave Reconnection is available on my blog](
+
 )
 
 ## Requirements
