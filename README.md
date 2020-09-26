@@ -14,7 +14,7 @@ Later we will get onto more complicated topics such as reaching a consensus of w
 
 Questions comments and suggestions can be raised the specific blog post or by using issues here.
 
-## Tutorial 11 - 11 Automatic Slave Reconnection
+## Tutorial 11 - Automatic Slave Reconnection
 
 This tutorial focuses on changing the slave so that it will automatically reconnect to the master if the connection is lost.
 
@@ -22,9 +22,7 @@ With this addition the slave will automatically reconnect to the master no matte
 
 The next tutorial will focus on looking at how we can make the cluster code run on boot using rc.local.
 
-The full details for [Tutorial 11 - Automatic Slave Reconnection is available on my blog](
-
-)
+The full details for [Tutorial 11 - Automatic Slave Reconnection is available on my blog](https://chewett.co.uk/blog/1964/raspberry-pi-cluster-node-11-automatic-slave-reconnection/)
 
 ## Requirements
 
