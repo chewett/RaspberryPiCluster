@@ -41,13 +41,13 @@ def get_message(clientsocket):
 
     while True:
         try:
-            data = clientsocket.recv(512) #Get at max 512 bytes of data from the client
-        except socket.error: #If we failed to get data, assume they have disconnected
+            data = clientsocket.recv(512)  # Get at max 512 bytes of data from the client
+        except socket.error:  # If we failed to get data, assume they have disconnected
             raise DisconnectionException("Failed to receive messages, client has disconnected")
 
         data_len = len(data)
-        if data_len > 0: #Do something if we got data
-            _buffered_string += data #Keep track of our buffered stored data
+        if data_len > 0:  # Do something if we got data
+            _buffered_string += data  # Keep track of our buffered stored data
 
             _check_buffer_for_messages()
             message_in_buffer = _get_message_in_buffer()
