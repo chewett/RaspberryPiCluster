@@ -14,22 +14,21 @@ Later we will get onto more complicated topics such as reaching a consensus of w
 
 Questions comments and suggestions can be raised the specific blog post or by using issues here.
 
-## Tutorial 15 - A more complex webserver
+## Tutorial 16 - Python 3 codebase Refactor
 
-This tutorial adds to the previous one by improving the display of the webserver
-by including information about the slaves attached. In addition to this the
-slaves are modified to use a UUID rather than a random integer to define them.
+This tutorial adds to the previous one by improving moving the codebase to Python 3.
+In this it is also refactoring a number of the older parts of the codebase.
 
-The next tutorial will focus on cleaning up the codebase in preparation for new features.
+The next tutorial will focus on what!
 
 The full details for
-[Tutorial 15 - A more complex webserver](
-https://chewett.co.uk/blog/2179/raspberry-pi-cluster-node-15-a-more-complex-webserver/
+[Tutorial 16 - Python 3 codebase Refactor](
+https://chewett.co.uk/blog/
 )
 
 ## Requirements
 
-This code should run on anything with Python 2 installed but is developed
+This code should run on anything with Python 3 installed but is developed
 to run on as Raspberry Pi.
 
 Python modules required:
