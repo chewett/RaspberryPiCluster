@@ -1,12 +1,11 @@
 #!/usr/bin/env python3
 
 import os
-import socket
-import ConfigParser
-from RpiCluster.MainLogger import add_file_logger, logger
+import configparser
+from RpiCluster.MainLogger import add_file_logger
 from RpiCluster.RpiPrimary import RpiPrimary
 
-config = ConfigParser.ConfigParser()
+config = configparser.ConfigParser()
 config.read(os.path.join(os.path.dirname(os.path.realpath(__file__)), 'rpicluster.cfg'))
 
 socket_port = config.getint("primary", "socket_port")

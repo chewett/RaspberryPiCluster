@@ -1,0 +1,64 @@
+import json
+import socket
+from RpiCluster.RpiClusterExceptions import DisconnectionException
+
+_MESSAGE_SEPARATOR = "\r"
+
+
+class ConnectionHandler():
+
+    def __init__(self, sock):
+        self.sock = sock
+        self._buffered_string = ""
+        self._buffered_messages = []
+
+    def _check_buffer_for_messages(self):
+        split_buffered_data = self._buffered_string.split(_MESSAGE_SEPARATOR)
+        if len(split_buffered_data) > 1:  # If we find more than one item, there is a message
+            messages_to_process = split_buffered_data[0:-1]
+            for message in messages_to_process:
+                self._buffered_messages.append(message)
+
+            self._buffered_string = split_buffered_data[-1]
+
+    def _get_message_in_buffer(self):
+        if len(self._buffered_messages) > 0:
+            return json.loads(self._buffered_messages.pop(0))
+        else:
+            return None
+
+    def get_message(self):
+        message_in_buffer = self._get_message_in_buffer()
+        if message_in_buffer:
+            return message_in_buffer
+
+        while True:
+            try:
+                data = self.sock.recv(512)  # Get at max 512 bytes of data from the client
+            except socket.error:  # If we failed to get data, assume they have disconnected
+                raise DisconnectionException("Failed to receive messages, client has disconnected")
+
+            data_len = len(data)
+            if data_len > 0:  # Do something if we got data
+                self._buffered_string += data.decode("utf-8")  # Keep track of our buffered stored data
+
+                self._check_buffer_for_messages()
+                message_in_buffer = self._get_message_in_buffer()
+                if message_in_buffer:
+                    return message_in_buffer
+            else:
+                raise DisconnectionException("No further messages received, client has disconnected")
+
+    def send_message(self, payload, payload_type="message"):
+        payload = json.dumps({"type": payload_type, "payload": payload}) + _MESSAGE_SEPARATOR
+
+        try:
+            self.sock.send(payload.encode("utf-8"))
+            return True
+        except socket.error:
+            raise DisconnectionException("Failed to send message")
+
+
+
+
+

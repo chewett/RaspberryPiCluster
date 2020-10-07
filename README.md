@@ -35,7 +35,7 @@ Python modules required:
 * All Base modules
 * psutil
 * bottle
-* ConfigParser
+* configparser
 
 ## Licence
 

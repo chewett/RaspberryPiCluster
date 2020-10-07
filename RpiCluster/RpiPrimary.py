@@ -1,9 +1,6 @@
-import time
-import datetime
 import socket
-from MainLogger import logger
-
-from RpiClusterClient import RpiClusterClient
+from RpiCluster.MainLogger import logger
+from RpiCluster.RpiClusterClient import RpiClusterClient
 
 
 class RpiPrimary:

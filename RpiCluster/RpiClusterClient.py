@@ -1,11 +1,10 @@
 import json
 import threading
-import time
 import uuid
-from DataPackager import get_message, create_payload, send_message
-from RpiClusterExceptions import DisconnectionException
-from MachineInfo import get_base_machine_info
-from MainLogger import logger
+from RpiCluster.RpiClusterExceptions import DisconnectionException
+from RpiCluster.MachineInfo import get_base_machine_info
+from RpiCluster.MainLogger import logger
+from RpiCluster.ConnectionHandler import ConnectionHandler
 
 
 class RpiClusterClient(threading.Thread):
@@ -14,7 +13,7 @@ class RpiClusterClient(threading.Thread):
         threading.Thread.__init__(self)
         self.uuid = uuid.uuid4().hex
         self.primary = primary
-        self.clientsocket = clientsocket
+        self.connection_handler = ConnectionHandler(clientsocket)
         self.address = address
         self.node_specifications = None
 
@@ -22,7 +21,7 @@ class RpiClusterClient(threading.Thread):
         try:
             message = True
             while message:
-                message = get_message(self.clientsocket)
+                message = self.connection_handler.get_message()
                 if message['type'] == 'message':
                     logger.info("Received message: " + message['payload'])
                 elif message['type'] == 'computer_details':
@@ -31,14 +30,14 @@ class RpiClusterClient(threading.Thread):
                 elif message['type'] == 'info':
                     logger.info("Secondary wants to know my info about " + message['payload'])
                     if message['payload'] == 'computer_details':
-                        send_message(self.clientsocket, create_payload(get_base_machine_info(), "primary_info"))
+                        self.connection_handler.send_message(get_base_machine_info(), "primary_info")
                     elif message['payload'] == 'uuid':
-                        send_message(self.clientsocket, create_payload(self.uuid, "uuid"))
+                        self.connection_handler.send_message(self.uuid, "uuid")
                     elif message['payload'] == 'secondary_details':
                         secondary_details = self.primary.get_secondary_details()
-                        send_message(self.clientsocket, create_payload(secondary_details, "secondary_details"))
+                        self.connection_handler.send_message(secondary_details, "secondary_details")
                     else:
-                        send_message(self.clientsocket, create_payload("unknown", "bad_message"))
+                        self.connection_handler.send_message("unknown", "bad_message")
         except DisconnectionException as e:
             logger.info("Got disconnection exception with message: " + e.message)
             logger.info("Shutting down secondary connection handler")
