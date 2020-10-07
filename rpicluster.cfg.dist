@@ -1,10 +1,10 @@
-[master]
+[primary]
 socket_port = 12345
 socket_bind_ip =
 
-[slave]
+[secondary]
 socket_port = 12345
-master_ip = 127.0.0.1
+primary_ip = 127.0.0.1
 
 [webserver]
 webserver_port = 8123

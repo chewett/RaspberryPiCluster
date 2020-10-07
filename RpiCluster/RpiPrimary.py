@@ -6,7 +6,7 @@ from MainLogger import logger
 from RpiClusterClient import RpiClusterClient
 
 
-class RpiMaster:
+class RpiPrimary:
 
     def __init__(self, socket_bind_ip, socket_port):
         self.socket_bind_ip = socket_bind_ip
@@ -31,14 +31,14 @@ class RpiMaster:
     def remove_client(self, rpi_client):
         del self.connected_clients[rpi_client.uuid]
 
-    def get_slave_details(self):
-        slave_details = {}
+    def get_secondary_details(self):
+        secondary_details = {}
         for uuid in self.connected_clients:
-            slave_details[uuid] = {
+            secondary_details[uuid] = {
                 "uuid": uuid,
                 "address": str(self.connected_clients[uuid].address[0]) + ":" + str(self.connected_clients[uuid].address[1]),
 
             }
 
-        return slave_details
+        return secondary_details
 
