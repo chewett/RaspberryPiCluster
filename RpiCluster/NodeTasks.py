@@ -21,7 +21,7 @@ def get_node_time():
 
 
 def get_node_codebase_revision():
-    # Note: This is not nesscarily the revision of the code currently running
+    # Note: This is not necessarily the revision of the code currently running
     current_rev = subprocess.check_output(["git", "rev-parse", "HEAD"])
     return current_rev.rstrip("\r\n")
 
