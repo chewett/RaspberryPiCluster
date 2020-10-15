@@ -2,7 +2,7 @@ import json
 import threading
 import uuid
 from RpiCluster.RpiClusterExceptions import DisconnectionException
-from RpiCluster.MachineInfo import get_base_machine_info
+from RpiCluster.Tasks.MachineInfo import get_base_machine_info
 from RpiCluster.MainLogger import logger
 from RpiCluster.ConnectionHandler import ConnectionHandler
 

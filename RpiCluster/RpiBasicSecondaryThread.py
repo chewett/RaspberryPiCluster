@@ -3,7 +3,7 @@ import time
 import socket
 import json
 from RpiCluster.MainLogger import logger
-from RpiCluster.MachineInfo import get_base_machine_info
+from RpiCluster.Tasks.MachineInfo import get_base_machine_info
 from RpiCluster.ConnectionHandler import ConnectionHandler
 from RpiCluster.RpiClusterExceptions import DisconnectionException
 
