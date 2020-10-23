@@ -19,10 +19,8 @@ Questions comments and suggestions can be raised the specific blog post or by us
 This tutorial adds to the previous one by improving moving the codebase to Python 3.
 In this it is also refactoring a number of the older parts of the codebase.
 
-The next tutorial will focus on what!
-
 The full details for
-[Tutorial 16 - Python 3 codebase Refactor](
+[Tutorial 16 - Python 3 codebase Refactor is available on my blog](
 https://chewett.co.uk/blog/
 )
 
