@@ -16,7 +16,7 @@ class RpiClusterClient(threading.Thread):
         Attributes:
             uuid: A random UUID created for the node to give everyone a random ID
             primary: a reference to the primary to get information from it
-            connection_handler: A handler that manages recieving and sending messages in the payload format
+            connection_handler: A handler that manages receiving and sending messages in the payload format
             address: Address of the client
             node_specifications: Details of the node if it provides it
 

@@ -17,7 +17,7 @@ class RpiBasicSecondaryThread(threading.Thread):
         Attributes:
             uuid: A UUID to represent the secondary thread. This is assigned by the primary
             server_address: A tuple representing the IP address and port to use for the primary
-            connection_handler: A connection handler object which will be used for sending/recieving messages.
+            connection_handler: A connection handler object which will be used for sending/receiving messages.
     """
 
     def __init__(self, primary_ip, socket_port):
