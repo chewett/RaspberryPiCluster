@@ -13,6 +13,7 @@ socket_bind_ip = config.get("primary", "socket_bind_ip")
 
 add_file_logger("primary.log")
 
+# The RpiPrimary class handles all of the interesting bits of work that the primary performs
 primary = RpiPrimary(socket_bind_ip, socket_port)
 primary.start()
 

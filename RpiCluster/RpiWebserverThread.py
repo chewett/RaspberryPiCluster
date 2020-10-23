@@ -5,6 +5,12 @@ from RpiCluster.RpiBasicSecondaryThread import RpiBasicSecondaryThread
 
 
 class RpiWebserverSecondaryThread(RpiBasicSecondaryThread):
+    """Subclass of the main RpiBasicSecondaryThread which handles connecting as a webserver
+
+        This is used to continually request data from the primary with the details of the cluster.
+        Static variables in this class are used to keep track of this data and make it easily accessible
+        by the webserver.
+    """
 
     current_primary_details = None
     current_secondary_details = None

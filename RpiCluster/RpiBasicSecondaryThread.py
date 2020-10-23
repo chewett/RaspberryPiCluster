@@ -9,6 +9,16 @@ from RpiCluster.RpiClusterExceptions import DisconnectionException
 
 
 class RpiBasicSecondaryThread(threading.Thread):
+    """Relatively basic class to represent a "simple" secondary node that connects to the primary and performs no actions.
+
+        Creating children from this base will allow more complex systems to be created. This inherits from thread so
+        you are able to start this running and perform other processing at the same time.
+
+        Attributes:
+            uuid: A UUID to represent the secondary thread. This is assigned by the primary
+            server_address: A tuple representing the IP address and port to use for the primary
+            connection_handler: A connection handler object which will be used for sending/recieving messages.
+    """
 
     def __init__(self, primary_ip, socket_port):
         threading.Thread.__init__(self)
@@ -17,6 +27,7 @@ class RpiBasicSecondaryThread(threading.Thread):
         self.connection_handler = None
 
     def run(self):
+        """Base method to begin running the thread, this will connect to the primary and then repeatedly call self.perform_action"""
         logger.info("Starting script...")
 
         while True:
@@ -47,6 +58,7 @@ class RpiBasicSecondaryThread(threading.Thread):
                 message = self.connection_handler.get_message()
                 logger.info("We have information about the primary " + json.dumps(message['payload']))
 
+                # TODO: possibly add some way to signal to the thread that we want to stop
                 while True:
                     self.perform_action()
 
@@ -55,6 +67,7 @@ class RpiBasicSecondaryThread(threading.Thread):
                 logger.info("Secondary will try and reconnect once primary is back online")
 
     def perform_action(self):
+        """This method is going to be the primary one you will override to make the node to custom exciting things"""
         logger.info("Now sending a keepalive to the primary")
         self.connection_handler.send_message("I am still alive, client: {num}".format(num=self.uuid))
         time.sleep(5)

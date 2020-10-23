@@ -8,6 +8,19 @@ from RpiCluster.ConnectionHandler import ConnectionHandler
 
 
 class RpiClusterClient(threading.Thread):
+    """This class is used to handle each secondary node that connects to the primary.
+
+        When running this will continually get messages from the secondary node and return a response
+        in some form.
+
+        Attributes:
+            uuid: A random UUID created for the node to give everyone a random ID
+            primary: a reference to the primary to get information from it
+            connection_handler: A handler that manages recieving and sending messages in the payload format
+            address: Address of the client
+            node_specifications: Details of the node if it provides it
+
+    """
 
     def __init__(self, primary, clientsocket, address):
         threading.Thread.__init__(self)
@@ -18,6 +31,7 @@ class RpiClusterClient(threading.Thread):
         self.node_specifications = None
 
     def run(self):
+        """Method that runs handling the secondary and serving all of its messages"""
         try:
             message = True
             while message:
