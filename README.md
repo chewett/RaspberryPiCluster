@@ -21,7 +21,7 @@ In this it is also refactoring a number of the older parts of the codebase.
 
 The full details for
 [Tutorial 16 - Python 3 codebase Refactor is available on my blog](
-https://chewett.co.uk/blog/
+https://chewett.co.uk/blog/2680/raspberry-pi-cluster-node-16-python-3-codebase-refactor/
 )
 
 ## Requirements
