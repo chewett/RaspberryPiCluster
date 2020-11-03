@@ -3,7 +3,7 @@
 import os
 import configparser
 from RpiCluster.MainLogger import add_file_logger
-from RpiCluster.RpiBasicSecondaryThread import RpiBasicSecondaryThread
+from RpiCluster.SecondaryNodes.RpiBasicSecondaryThread import RpiBasicSecondaryThread
 
 config = configparser.ConfigParser()
 config.read(os.path.join(os.path.dirname(os.path.realpath(__file__)), 'rpicluster.cfg'))

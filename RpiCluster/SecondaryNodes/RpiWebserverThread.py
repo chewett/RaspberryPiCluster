@@ -1,7 +1,7 @@
 import time
 import datetime
 from RpiCluster.MainLogger import logger
-from RpiCluster.RpiBasicSecondaryThread import RpiBasicSecondaryThread
+from RpiCluster.SecondaryNodes.RpiBasicSecondaryThread import RpiBasicSecondaryThread
 
 
 class RpiWebserverSecondaryThread(RpiBasicSecondaryThread):

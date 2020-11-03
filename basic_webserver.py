@@ -5,7 +5,7 @@ import json
 import configparser
 from bottle import route, run, template
 from RpiCluster.MainLogger import add_file_logger
-from RpiCluster.RpiWebserverThread import RpiWebserverSecondaryThread
+from RpiCluster.SecondaryNodes.RpiWebserverThread import RpiWebserverSecondaryThread
 
 config = configparser.ConfigParser()
 config.read(os.path.join(os.path.dirname(os.path.realpath(__file__)), 'rpicluster.cfg'))
