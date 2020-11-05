@@ -3,7 +3,7 @@ import time
 import socket
 import json
 from RpiCluster.MainLogger import logger
-from RpiCluster.Tasks.MachineInfo import get_base_machine_info
+from RpiCluster.Tasks.NodeVitals import get_node_baseinfo, get_current_node_vitals
 from RpiCluster.ConnectionHandler import ConnectionHandler
 from RpiCluster.RpiClusterExceptions import DisconnectionException
 
@@ -19,6 +19,8 @@ class RpiBasicSecondaryThread(threading.Thread):
             server_address: A tuple representing the IP address and port to use for the primary
             connection_handler: A connection handler object which will be used for sending/receiving messages.
     """
+
+    VITAL_SEND_PERIOD = 60
 
     def __init__(self, primary_ip, socket_port):
         threading.Thread.__init__(self)
@@ -52,14 +54,19 @@ class RpiBasicSecondaryThread(threading.Thread):
                 self.uuid = message['payload']
                 logger.info("My assigned UUID is " + self.uuid)
 
-                self.connection_handler.send_message(get_base_machine_info(), 'computer_details')
-                self.connection_handler.send_message("computer_details", "info")
+                self.connection_handler.send_message(get_node_baseinfo(), 'node_baseinfo')
+                self.connection_handler.send_message("node_baseinfo", "info")
 
                 message = self.connection_handler.get_message()
                 logger.info("We have information about the primary " + json.dumps(message['payload']))
 
                 # TODO: possibly add some way to signal to the thread that we want to stop
+                vitals_last_sent = 0
                 while True:
+                    if (vitals_last_sent + 60) < time.time():
+                        logger.info("Sending vitals to primary node")
+                        self.connection_handler.send_message(get_current_node_vitals(), "vitals")
+                        vitals_last_sent = time.time()
                     self.perform_action()
 
             except DisconnectionException as e:

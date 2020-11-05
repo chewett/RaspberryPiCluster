@@ -19,7 +19,7 @@ class RpiWebserverSecondaryThread(RpiBasicSecondaryThread):
     def perform_action(self):
         logger.info("Now sending a keepalive to the primary")
         self.connection_handler.send_message("I am still alive, client: {num}".format(num=self.uuid))
-        self.connection_handler.send_message("computer_details", "info")
+        self.connection_handler.send_message("node_baseinfo", "info")
         primary_details = self.connection_handler.get_message()
         self.connection_handler.send_message("secondary_details", "info")
         secondary_details = self.connection_handler.get_message()
