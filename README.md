@@ -34,6 +34,10 @@ Python modules required:
 * psutil
 * bottle
 * configparser
+* influxdb
+
+Additional services required:
+* InfluxDb database
 
 ## Licence
 
