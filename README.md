@@ -14,14 +14,14 @@ Later we will get onto more complicated topics such as reaching a consensus of w
 
 Questions comments and suggestions can be raised the specific blog post or by using issues here.
 
-## Tutorial 16 - Python 3 codebase Refactor
+## Tutorial 17 - InfluxDB Machine Stats Monitoring
 
-This tutorial adds to the previous one by improving moving the codebase to Python 3.
-In this it is also refactoring a number of the older parts of the codebase.
+In this tutorial the data that is send from secondary nodes is logged
+to InfluxDB.
 
 The full details for
-[Tutorial 16 - Python 3 codebase Refactor is available on my blog](
-https://chewett.co.uk/blog/2680/raspberry-pi-cluster-node-16-python-3-codebase-refactor/
+[Tutorial 17 - 17 InfluxDB Machine Stats Monitoring](
+https://chewett.co.uk/blog/
 )
 
 ## Requirements
@@ -37,7 +37,7 @@ Python modules required:
 * influxdb
 
 Additional services required:
-* InfluxDb database
+* An InfluxDb database
 
 ## Licence
 
