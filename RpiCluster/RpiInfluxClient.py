@@ -10,18 +10,20 @@ class RpiInfluxClient:
         self.influxdb_host = influxdb_host
         self.influxdb_port = influxdb_port
         self.influxdb_database_prefix = influxdb_database_prefix
+        self.node_vitals_database_name = self.influxdb_database_prefix + "node_vitals"
         self.node_name = None
-        #We only connect once we are ready to connect
+        # We only connect once we are ready to connect
         self.influx_client = None
 
     def add_node_name(self, node_name):
         self.node_name = node_name
 
     def connect(self):
+
         """ Connects to the influx db Database using their client and sets up the databases needed (if needed)"""
         self.influx_client = InfluxDBClient(self.influxdb_host, self.influxdb_port)
-        self.influx_client.create_database(self.influxdb_database_prefix + "node_vitals")
-        self.influx_client.create_retention_policy('node_vitals_year_rp', '365d', "3", default=True)
+        self.influx_client.create_database(self.node_vitals_database_name)
+        self.influx_client.create_retention_policy("node_vitals_year_rp", '365d', 3, database=self.node_vitals_database_name, default=True)
 
     def _write_datapoint(self, measurement, values):
         if self.node_name is None:
@@ -39,7 +41,7 @@ class RpiInfluxClient:
             }
         ]
 
-        self.influx_client.write_points(points_to_write)
+        self.influx_client.write_points(points_to_write, database=self.node_vitals_database_name)
 
     def log_vitals(self, vitals):
         # TODO: Write these in one write_points API call rather than lots of smaller ones
@@ -51,4 +53,5 @@ class RpiInfluxClient:
             "free": vitals.ram_free
         })
         self._write_datapoint("swap", {"free": vitals.swap_free})
+
 

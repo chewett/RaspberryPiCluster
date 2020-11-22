@@ -49,6 +49,7 @@ class RpiClusterClient(threading.Thread):
                 elif message['type'] == 'vitals':
                     self.current_vitals = VitalsPayload.load_payload(message['payload'])
                     self.influx_client.log_vitals(self.current_vitals)
+                    logger.info("Written vitals to influxdb " + json.dumps(self.current_vitals.get_flat_payload()))
                 elif message['type'] == 'info':
                     logger.info("Secondary wants to know my info about " + message['payload'])
                     if message['payload'] == 'node_baseinfo':
