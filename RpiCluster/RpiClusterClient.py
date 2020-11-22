@@ -5,6 +5,7 @@ from RpiCluster.RpiClusterExceptions import DisconnectionException
 from RpiCluster.Tasks.NodeVitals import get_node_baseinfo
 from RpiCluster.MainLogger import logger
 from RpiCluster.ConnectionHandler import ConnectionHandler
+from RpiCluster.Payloads.VitalsPayload import VitalsPayload
 
 
 class RpiClusterClient(threading.Thread):
@@ -22,8 +23,10 @@ class RpiClusterClient(threading.Thread):
 
     """
 
-    def __init__(self, primary, clientsocket, address):
+    def __init__(self, primary, clientsocket, address, new_influx_client):
         threading.Thread.__init__(self)
+        self.influx_client = new_influx_client
+        self.influx_client.connect()
         self.uuid = uuid.uuid4().hex
         self.primary = primary
         self.connection_handler = ConnectionHandler(clientsocket)
@@ -41,10 +44,11 @@ class RpiClusterClient(threading.Thread):
                     logger.info("Received message: " + message['payload'])
                 elif message['type'] == 'node_baseinfo':
                     self.node_specifications = message['payload']
+                    self.influx_client.add_node_name(self.node_specifications['hostname'])
                     logger.info("Received Node Baseinfo: " + json.dumps(self.node_specifications))
                 elif message['type'] == 'vitals':
-                    self.current_vitals = message['payload']
-                    logger.info("Received vitals: " + json.dumps(self.current_vitals))
+                    self.current_vitals = VitalsPayload.load_payload(message['payload'])
+                    self.influx_client.log_vitals(self.current_vitals)
                 elif message['type'] == 'info':
                     logger.info("Secondary wants to know my info about " + message['payload'])
                     if message['payload'] == 'node_baseinfo':

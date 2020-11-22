@@ -65,7 +65,8 @@ class RpiBasicSecondaryThread(threading.Thread):
                 while True:
                     if (vitals_last_sent + 60) < time.time():
                         logger.info("Sending vitals to primary node")
-                        self.connection_handler.send_message(get_current_node_vitals(), "vitals")
+                        current_vitals = get_current_node_vitals()
+                        self.connection_handler.send_message(current_vitals.get_flat_payload(), "vitals")
                         vitals_last_sent = time.time()
                     self.perform_action()
 

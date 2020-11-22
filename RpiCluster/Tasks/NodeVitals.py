@@ -3,6 +3,8 @@ import platform
 import multiprocessing
 import socket
 
+from RpiCluster.Payloads.VitalsPayload import VitalsPayload
+
 
 def get_node_baseinfo():
     """When called various interesting statistics about the nodes capabilities are returned
@@ -33,12 +35,12 @@ def get_current_node_vitals():
         Currently this includes cpu percentage, cpu frequency, ram available and swap available.
     """
 
-    return {
-        # TODO: Consider making this an object.
-        'cpu_percentage': psutil.cpu_percent(1),
-        'cpu_frequency': psutil.cpu_freq().current,
-        'ram_free': psutil.virtual_memory().free,
-        'swap_free': psutil.swap_memory().free,
+    return VitalsPayload(
         # TODO: Store temps, fans, and battery details if available?
-    }
+        psutil.cpu_percent(1),
+        psutil.cpu_freq().current,
+        psutil.virtual_memory().free,
+        psutil.swap_memory().free
+    )
+
 

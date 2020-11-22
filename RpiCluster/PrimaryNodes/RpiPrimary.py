@@ -1,6 +1,7 @@
 import socket
 from RpiCluster.MainLogger import logger
 from RpiCluster.RpiClusterClient import RpiClusterClient
+from RpiCluster.RpiInfluxClient import RpiInfluxClient
 
 
 class RpiPrimary:
@@ -15,15 +16,23 @@ class RpiPrimary:
             connected_clients: Dict of connected clients
     """
 
-    def __init__(self, socket_bind_ip, socket_port):
+    def __init__(self, socket_bind_ip, socket_port, influxdb_host, influxdb_port, influxdb_database_prefix):
         self.socket_bind_ip = socket_bind_ip
         self.socket_port = socket_port
+        self.influxdb_host = influxdb_host
+        self.influxdb_port = influxdb_port
+        self.influxdb_database_prefix = influxdb_database_prefix
+
         self.connected_clients = {}
+        self.influx_client = None
 
     def start(self):
-        """Start the handling of secondary nodes"""
-        logger.info("Starting script...")
+        """Set up the primary to handle the various responsibilities"""
+        logger.info("Starting primary...")
 
+
+
+        # Start the handling of the secondary nodes
         listening_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         listening_socket.bind((self.socket_bind_ip, self.socket_port))
 
@@ -32,7 +41,8 @@ class RpiPrimary:
             (clientsocket, address) = listening_socket.accept()
             logger.info("Got client at {address}".format(address=address))
 
-            rpi_client = RpiClusterClient(self, clientsocket, address)
+            new_influx_client = RpiInfluxClient(self.influxdb_host, self.influxdb_port, self.influxdb_database_prefix)
+            rpi_client = RpiClusterClient(self, clientsocket, address, new_influx_client)
             self.connected_clients[rpi_client.uuid] = rpi_client
             rpi_client.start()
 
