@@ -3,7 +3,7 @@ Raspberry Pi Cluster project
 
 This repository holds the code for [the tutorials](https://chewett.co.uk/blog/category/raspberry-pi-cluster/) for creating a Raspberry Pi Cluster in Python.
 
-Here I go through the basics of creating a simple logger to a distributed task assigned system.
+Here I go through the basics of creating a simple logger to a distributed task assigment system.
 
 Each tutorial will have a github release and tagged version. These can be found
 [on github](https://github.com/chewett/RaspberryPiCluster/releases).
@@ -16,8 +16,10 @@ Questions comments and suggestions can be raised the specific blog post or by us
 
 ## Tutorial 17 - InfluxDB Machine Stats Monitoring
 
-In this tutorial the data that is send from secondary nodes is logged
-to InfluxDB.
+In this tutorial I modify the secondary nodes to send data about the node
+to the primary.
+
+This is then recieved and logged to an InfluxDB database for review.
 
 The full details for
 [Tutorial 17 - 17 InfluxDB Machine Stats Monitoring](
