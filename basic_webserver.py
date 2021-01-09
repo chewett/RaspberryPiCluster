@@ -6,9 +6,12 @@ import configparser
 from bottle import route, run, template
 from RpiCluster.MainLogger import add_file_logger
 from RpiCluster.SecondaryNodes.RpiWebserverThread import RpiWebserverSecondaryThread
+from RpiCluster.NodeConfig import NodeConfig
 
 config = configparser.ConfigParser()
 config.read(os.path.join(os.path.dirname(os.path.realpath(__file__)), 'rpicluster.cfg'))
+
+NodeConfig.load(config)
 
 socket_port = config.getint("secondary", "socket_port")
 primary_ip = config.get("secondary", "primary_ip")
