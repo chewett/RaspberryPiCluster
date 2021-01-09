@@ -4,6 +4,7 @@ import multiprocessing
 import socket
 
 from RpiCluster.Payloads.VitalsPayload import VitalsPayload
+from RpiCluster.NodeConfig import NodeConfig
 
 
 def get_node_baseinfo():
@@ -35,12 +36,22 @@ def get_current_node_vitals():
         Currently this includes cpu percentage, cpu frequency, ram available and swap available.
     """
 
+    # None unless we have a node that supports exporting this
+    cpu_temperature = None
+    if NodeConfig.node_type == "raspberrypi":
+        #Only import this if we are a RaspberryPi node, other nodes might not have this
+        from RaspberryPiVcgencmd import Vcgencmd
+        vc = Vcgencmd()
+        cpu_temperature = vc.get_cpu_temp()
+
+
     return VitalsPayload(
-        # TODO: Store temps, fans, and battery details if available?
+        # TODO: Store fans, and battery details if available?
         psutil.cpu_percent(1),
         psutil.cpu_freq().current,
         psutil.virtual_memory().free,
-        psutil.swap_memory().free
+        psutil.swap_memory().free,
+        cpu_temperature=cpu_temperature
     )
 
 

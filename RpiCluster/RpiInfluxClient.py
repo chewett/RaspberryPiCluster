@@ -53,5 +53,7 @@ class RpiInfluxClient:
             "free": vitals.ram_free
         })
         self._write_datapoint("swap", {"free": vitals.swap_free})
+        if vitals.cpu_temperature:
+            self._write_datapoint("cpu_temperature", vitals.cpu_temperature)
 
 
