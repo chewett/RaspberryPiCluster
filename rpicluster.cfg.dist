@@ -1,3 +1,6 @@
+[node_config]
+node_type = raspberrypi
+
 [primary]
 socket_port = 12345
 socket_bind_ip =
