@@ -27,7 +27,7 @@ class VitalsPayload:
     @staticmethod
     def load_payload(payload):
         cpu_temperature = None
-        if payload['cpu_temperature']:
+        if "cpu_temperature" in payload:
             cpu_temperature = payload['cpu_temperature']
 
         return VitalsPayload(payload['cpu_percentage'], payload['cpu_frequency'], payload['ram_free'], payload['swap_free'], cpu_temperature=cpu_temperature)
