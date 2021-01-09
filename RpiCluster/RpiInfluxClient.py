@@ -45,15 +45,19 @@ class RpiInfluxClient:
 
     def log_vitals(self, vitals):
         # TODO: Write these in one write_points API call rather than lots of smaller ones
-        self._write_datapoint("cpu", {
+
+        cpu_data = {
             "frequency": vitals.cpu_frequency,
-            "percentage": vitals.cpu_percentage
-        })
+            "percentage": vitals.cpu_percentage,
+        }
+
+        if vitals.cpu_temperature:
+            cpu_data['temperature'] = vitals.cpu_temperature
+
+        self._write_datapoint("cpu", cpu_data)
         self._write_datapoint("ram", {
             "free": vitals.ram_free
         })
         self._write_datapoint("swap", {"free": vitals.swap_free})
-        if vitals.cpu_temperature:
-            self._write_datapoint("cpu_temperature", vitals.cpu_temperature)
 
 
