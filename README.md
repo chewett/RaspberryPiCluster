@@ -14,16 +14,16 @@ Later we will get onto more complicated topics such as reaching a consensus of w
 
 Questions comments and suggestions can be raised the specific blog post or by using issues here.
 
-## Tutorial 17 - InfluxDB Machine Stats Monitoring
+## Tutorial 18 - Raspberry Pi Temp Monitoring
 
-In this tutorial I modify the secondary nodes to send data about the node
-to the primary.
+In this tutorial I collect the CPU temperature of the Raspberry Pi and report it
+as part of the node vitals.
 
-This is then recieved and logged to an InfluxDB database for review.
+This again is logged in the InfluxDB data store for review.
 
 The full details for
-[Tutorial 17 - 17 InfluxDB Machine Stats Monitoring](
-https://chewett.co.uk/blog/2744/raspberry-pi-cluster-node-17-influxdb-machine-stats-monitoring/
+[Tutorial 18 - Raspberry Pi Temp Monitoring](
+https://chewett.co.uk/blog/
 )
 
 ## Requirements
@@ -37,6 +37,7 @@ Python modules required:
 * bottle
 * configparser
 * influxdb
+* RaspberryPiVcgencmd (installable via pip)
 
 Additional services required:
 * An InfluxDb database
