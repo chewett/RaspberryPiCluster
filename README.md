@@ -23,7 +23,7 @@ This is then recieved and logged to an InfluxDB database for review.
 
 The full details for
 [Tutorial 17 - 17 InfluxDB Machine Stats Monitoring](
-https://chewett.co.uk/blog/
+https://chewett.co.uk/blog/2744/raspberry-pi-cluster-node-17-influxdb-machine-stats-monitoring/
 )
 
 ## Requirements
