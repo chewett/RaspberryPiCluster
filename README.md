@@ -23,7 +23,7 @@ This again is logged in the InfluxDB data store for review.
 
 The full details for
 [Tutorial 18 - Raspberry Pi Temp Monitoring](
-https://chewett.co.uk/blog/
+https://chewett.co.uk/blog/2780/raspberry-pi-cluster-node-18-raspberry-pi-temperature-monitoring/
 )
 
 ## Requirements
