@@ -49,7 +49,7 @@ def get_current_node_vitals():
         # TODO: Store fans, and battery details if available?
         psutil.cpu_percent(1),
         psutil.cpu_freq().current,
-        psutil.virtual_memory().free,
+        psutil.virtual_memory().available,
         psutil.swap_memory().free,
         cpu_temperature=cpu_temperature
     )
